@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './styles.css';
 
 function ListaBancos() {
   const [bancos, setBancos] = useState([]);
@@ -21,12 +22,12 @@ function ListaBancos() {
   }, []);
 
   return (
-    <div>
+    <div className="list-container">
       <h2>Lista de Bancos</h2>
       {erro && <p>{erro}</p>}
       <ul>
         {bancos.map(banco => (
-          <li key={banco.codigo_compensacao}>
+          <li key={banco.codigo_compensacao} className="bank-item">
             <p>Código de Compensação: {banco.codigo_compensacao}</p>
             <p>Nome da Instituição: {banco.nome_instituicao}</p>
             {/* Adicione outros campos conforme necessário */}

@@ -1,0 +1,32 @@
+.container {
+
+  /* styles.css */
+
+  body {
+    background-color: #f0f0f0; /* Define o fundo cinza */
+    font-family: Arial, sans-serif; /* Define a fonte sans-serif */
+  }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    margin-bottom: 10px;
+  }
+  
+  .input-container input {
+    margin-right: 10px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .bank-info {
+    margin-top: 10px;
+  }
+  

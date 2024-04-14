@@ -1,6 +1,6 @@
-// BuscarBanco.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import './styles.css';
 
 function BuscarBanco() {
   const [codigo, setCodigo] = useState('');
@@ -19,21 +19,23 @@ function BuscarBanco() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Buscar Banco por Código de Compensação</h2>
-      <input
-        type="text"
-        placeholder="Digite o código de compensação"
-        value={codigo}
-        onChange={(e) => setCodigo(e.target.value)}
-      />
-      <button onClick={buscarBancoPorCodigo}>Buscar</button>
-      {erro && <p>{erro}</p>}
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder="Digite o código de compensação"
+          value={codigo}
+          onChange={(e) => setCodigo(e.target.value)}
+        />
+        <button onClick={buscarBancoPorCodigo}>Buscar</button>
+      </div>
+      {erro && <p className="error">{erro}</p>}
       {bancoEncontrado && (
-        <div>
+        <div className="bank-info">
           <h3>Banco Encontrado</h3>
-          <p>Código de Compensação: {bancoEncontrado.codigo_compensacao}</p>
-          <p>Nome da Instituição: {bancoEncontrado.nome_instituicao}</p>
+          <p><strong>Código de Compensação:</strong> {bancoEncontrado.codigo_compensacao}</p>
+          <p><strong>Nome da Instituição:</strong> {bancoEncontrado.nome_instituicao}</p>
           {/* Adicione outros campos conforme necessário */}
         </div>
       )}
